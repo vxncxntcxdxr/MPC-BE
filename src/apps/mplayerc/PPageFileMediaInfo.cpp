@@ -94,17 +94,30 @@ BOOL CPPageFileMediaInfo::OnInitDialog()
 	__super::OnInitDialog();
 
 	LOGFONTW lf = {};
-	lf.lfPitchAndFamily = DEFAULT_PITCH | FF_MODERN;
+	lf.lfPitchAndFamily = FIXED_PITCH | FF_DONTCARE;
 	lf.lfHeight = -m_pSheetDpi->ScaleY(12);
 
-	UINT i = 0;
-	BOOL success;
+	const LanguageResource& lr = CMPlayerCApp::languageResources[AfxGetAppSettings().iLanguage];
 
-	do {
-		wcscpy_s(lf.lfFaceName, LF_FACESIZE, MonospaceFonts[i]);
-		success = IsFontInstalled(MonospaceFonts[i]) && m_font.CreateFontIndirectW(&lf);
-		i++;
-	} while (!success && i < std::size(MonospaceFonts));
+	switch (lr.resourceID) {
+	case ID_LANGUAGE_KOREAN:
+	case ID_LANGUAGE_CHINESE_SIMPLIFIED:
+	case ID_LANGUAGE_CHINESE_TRADITIONAL:
+	case ID_LANGUAGE_JAPANESE: 
+		wcscpy_s(lf.lfFaceName, LF_FACESIZE, L"Malgun Gothic");
+		break;
+	}
+
+	BOOL success = lf.lfFaceName[0] && IsFontInstalled(lf.lfFaceName) && m_font.CreateFontIndirectW(&lf);
+
+	if (!success) {
+		UINT i = 0;
+		do {
+			wcscpy_s(lf.lfFaceName, LF_FACESIZE, MonospaceFonts[i]);
+			success = IsFontInstalled(MonospaceFonts[i]) && m_font.CreateFontIndirectW(&lf);
+			i++;
+		} while (!success && i < std::size(MonospaceFonts));
+	}
 
 	m_edMediainfo.SetFont(&m_font);
 
