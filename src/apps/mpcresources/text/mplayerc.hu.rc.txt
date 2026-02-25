@@ -514,16 +514,17 @@ BEGIN DIALOGEX IDD_PPAGESUBSTYLE LINES 66
 65		"Visszaállítás"
 END
 
-BEGIN DIALOGEX IDD_PPAGESUBTITLES LINES 20
+BEGIN DIALOGEX IDD_PPAGESUBTITLES LINES 21
 5		"Felirat megjelenítő:"
-7		"Útvonalak automatikus betöltése"
-9		"Visszaállítás"
-10		"A külső feliratokat részesítse előnyben a beágyazott feliratok helyett"
-12		"Ne töltsön beágyazott feliratokat"
-13		"A feliratfájlok automatikus újratöltése a módosítás észlelése után"
-15		"A Subresync használata"
-17		"Alapértelmezett kódlap:"
-19		"Kódlap automatikus észlelése"
+7		"Tulajdonságok"
+8		"Útvonalak automatikus betöltése"
+10		"Visszaállítás"
+11		"A külső feliratokat részesítse előnyben a beágyazott feliratok helyett"
+13		"Ne töltsön beágyazott feliratokat"
+14		"A feliratfájlok automatikus újratöltése a módosítás észlelése után"
+16		"A Subresync használata"
+18		"Alapértelmezett kódlap:"
+20		"Kódlap automatikus észlelése"
 END
 
 BEGIN DIALOGEX IDD_PPAGESYNC LINES 26

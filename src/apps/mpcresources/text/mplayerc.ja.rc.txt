@@ -514,16 +514,17 @@ BEGIN DIALOGEX IDD_PPAGESUBSTYLE LINES 66
 65		"リセット"
 END
 
-BEGIN DIALOGEX IDD_PPAGESUBTITLES LINES 20
+BEGIN DIALOGEX IDD_PPAGESUBTITLES LINES 21
 5		"字幕レンダラー:"
-7		"自動読み込みパス"
-9		"リセット"
-10		"内蔵字幕より外部字幕ファイルを優先する"
-12		"内蔵字幕を無視する"
-13		"修正検知後に字幕ファイルを自動で再読み込みする"
-15		"Subresync を使用する"
-17		"既定のコード ページ:"
-19		"コード ページを自動検出する"
+7		"プロパティ"
+8		"自動読み込みパス"
+10		"リセット"
+11		"内蔵字幕より外部字幕ファイルを優先する"
+13		"内蔵字幕を無視する"
+14		"修正検知後に字幕ファイルを自動で再読み込みする"
+16		"Subresync を使用する"
+18		"既定のコード ページ:"
+20		"コード ページを自動検出する"
 END
 
 BEGIN DIALOGEX IDD_PPAGESYNC LINES 26
